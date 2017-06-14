@@ -183,6 +183,17 @@
     equal(oColor.toHex(), 'FFFFFF');
     equal(oColor.getAlpha(), 0.5, 'alpha should be set properly');
   });
+  
+  test('fromRgba', function() {
+    ok(typeof fabric.Color.fromRgba == 'function');
+    var originalRgba = 'rgba(255,255,255,.5)';
+    var oColor = fabric.Color.fromRgba(originalRgba);
+    ok(oColor);
+    ok(oColor instanceof fabric.Color);
+    equal(oColor.toRgba(), originalRgba);
+    equal(oColor.toHex(), 'FFFFFF');
+    equal(oColor.getAlpha(), 0.5, 'alpha should be set properly');
+  });
 
   test('fromRgba (with whitespaces)', function() {
     var originalRgba = 'rgba( 255 , 255 , 255 , 0.5 )';
